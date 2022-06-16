@@ -18,7 +18,7 @@ class SurveyController extends Controller
 
 
     public function getSurveyById(Request $request){
-        $id = $request->Survey_id;
+        $id = $request->survey_id;
         $survey = Survey::find($id);
        
         return response()->json([
