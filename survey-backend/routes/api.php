@@ -27,6 +27,7 @@ Route::post('/getquestions', [QuestionController::class, 'getQuestionsBySurveyId
 
 Route::get('/gettypes', [TypeController::class, 'getTypes']);
 
+Route::post('/getoptions', [OptionController::class, 'getOptionsByQuestionId']);
 
 
 

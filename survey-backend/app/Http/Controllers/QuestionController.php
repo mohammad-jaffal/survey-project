@@ -21,7 +21,6 @@ class QuestionController extends Controller{
     }
 
     public function getQuestionsBySurveyId(Request $request){
-        echo('hello');
         $id = $request->survey_id;
         // $questions = Survey::find($id);
         $questions = Question::where('survey_id', $id)->get();
