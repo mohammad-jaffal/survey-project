@@ -5,6 +5,8 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\JWTController;
 use App\Http\Controllers\SurveyController;
 use App\Http\Controllers\QuestionController;
+use App\Http\Controllers\TypeController;
+
 
 Route::group(['middleware' => 'api'], function($router) {
     Route::post('/register', [JWTController::class, 'register']);
@@ -21,6 +23,7 @@ Route::post('/getsurvey', [SurveyController::class, 'getSurveyById']);
 
 Route::post('/getquestions', [QuestionController::class, 'getQuestionsBySurveyId']);
 
+Route::get('/gettypes', [TypeController::class, 'getTypes']);
 
 
 
@@ -28,4 +31,6 @@ Route::post('/getquestions', [QuestionController::class, 'getQuestionsBySurveyId
 Route::group(['prefix'=>'admin'], function(){
     Route::post('/addsurvey', [SurveyController::class, 'addSurvey']);
     Route::post('/addquestion', [QuestionController::class, 'addQuestion']);
+    Route::post('/addtype', [TypeController::class, 'addType']);
+
 });
