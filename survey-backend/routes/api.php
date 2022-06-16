@@ -6,6 +6,8 @@ use App\Http\Controllers\JWTController;
 use App\Http\Controllers\SurveyController;
 use App\Http\Controllers\QuestionController;
 use App\Http\Controllers\TypeController;
+use App\Http\Controllers\OptionController;
+
 
 
 Route::group(['middleware' => 'api'], function($router) {
@@ -32,5 +34,6 @@ Route::group(['prefix'=>'admin'], function(){
     Route::post('/addsurvey', [SurveyController::class, 'addSurvey']);
     Route::post('/addquestion', [QuestionController::class, 'addQuestion']);
     Route::post('/addtype', [TypeController::class, 'addType']);
+    Route::post('/addoption', [OptionController::class, 'addOption']);
 
 });
