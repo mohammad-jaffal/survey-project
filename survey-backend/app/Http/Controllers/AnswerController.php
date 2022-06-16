@@ -19,4 +19,16 @@ class AnswerController extends Controller
         ], 200);
     }
 
+
+    public function getAnswersByQuestionId(Request $request){
+        $id = $request->question_id;
+        $answers = Answer::where('question_id', $id)->get();
+       
+        return response()->json([
+            "success" => true,
+            "answers" => $answers
+        ], 200);
+    }
+
+
 }
