@@ -19,10 +19,11 @@ Route::group(['middleware' => 'api'], function($router) {
 Route::get('/getsurveys', [SurveyController::class, 'getSurveys']);
 Route::post('/getsurvey', [SurveyController::class, 'getSurveyById']);
 
-Route::group(['prefix'=>'user'], function(){
+Route::post('/getquestions', [QuestionController::class, 'getQuestionsBySurveyId']);
 
-    
-});
+
+
+
 
 Route::group(['prefix'=>'admin'], function(){
     Route::post('/addsurvey', [SurveyController::class, 'addSurvey']);

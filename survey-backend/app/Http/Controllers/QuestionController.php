@@ -3,10 +3,11 @@
 
 namespace App\Http\Controllers;
 use App\Models\Question;
+use App\Models\Survey;
 use Illuminate\Http\Request;
 
-class QuestionController extends Controller
-{
+class QuestionController extends Controller{
+
     public function addQuestion(Request $request){
         $question = new Question;
         $question->question = $request->question;
@@ -16,6 +17,18 @@ class QuestionController extends Controller
            
         return response()->json([
             "success" => true,
+        ], 200);
+    }
+
+    public function getQuestionsBySurveyId(Request $request){
+        echo('hello');
+        $id = $request->survey_id;
+        // $questions = Survey::find($id);
+        $questions = Question::where('survey_id', $id)->get();
+       
+        return response()->json([
+            "success" => true,
+            "questions" => $questions
         ], 200);
     }
 }
