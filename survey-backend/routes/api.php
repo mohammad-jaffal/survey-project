@@ -7,6 +7,7 @@ use App\Http\Controllers\SurveyController;
 use App\Http\Controllers\QuestionController;
 use App\Http\Controllers\TypeController;
 use App\Http\Controllers\OptionController;
+use App\Http\Controllers\AnswerController;
 
 
 
@@ -29,6 +30,7 @@ Route::get('/gettypes', [TypeController::class, 'getTypes']);
 
 Route::post('/getoptions', [OptionController::class, 'getOptionsByQuestionId']);
 
+Route::post('/addanswer', [AnswerController::class, 'addAnswer']);
 
 
 Route::group(['prefix'=>'admin'], function(){
