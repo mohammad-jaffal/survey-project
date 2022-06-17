@@ -15,7 +15,8 @@ const SurveysContainer = ({ isAdmin }) => {
 
     function clicked(x) {
         // 👇️ navigate to /
-        console.log(x)
+        // console.log(x);
+        localStorage.setItem("qid",x);
 
     };
 
@@ -24,7 +25,8 @@ const SurveysContainer = ({ isAdmin }) => {
 
         <div className="surveys-container">
             {elements.map((value, index) => {
-                return <SurveyItem key={index} text={'The title of this su '} isAdmin={isAdmin} onClick={()=>{clicked(value)}} />
+                return <Link key={index} to={"./home"}><SurveyItem text={'The title of this survey is written here'} isAdmin={isAdmin} onClick={()=>{clicked(value)}}/></Link> 
+            
             })}
 
             {/* <SurveyItem text={'The title of this su '} isAdmin={isAdmin} onClick={clicked} id={2} />
@@ -43,6 +45,6 @@ export default SurveysContainer;
 
 
 
-{/* <Link to={"./home"}>
-            <SurveyItem text={'The title of this survey is written here '} isAdmin={isAdmin} onClick={clicked} id={1}/>
-            </Link> */}
+// {/* <Link to={"./home"}>
+//             <SurveyItem text={'The title of this survey is written here '} isAdmin={isAdmin} onClick={clicked} id={1}/>
+//             </Link> */}

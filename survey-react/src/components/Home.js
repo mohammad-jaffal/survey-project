@@ -3,7 +3,8 @@ import { Routes, Route, Link, BrowserRouter } from 'react-router-dom';
 
 
 function Home  ({ isAdmin }) {
-    console.log(isAdmin)
+    
+    console.log(localStorage.getItem("qid"))
     return (
        <div><Link to={"/"}>
       Go back

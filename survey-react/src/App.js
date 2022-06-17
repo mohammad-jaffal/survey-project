@@ -15,7 +15,7 @@ import { Routes, Route, Link, BrowserRouter } from 'react-router-dom';
 
 
 function App() {
-  var isAdmin = true;
+  var isAdmin = false;
   return (
     <BrowserRouter>
 
