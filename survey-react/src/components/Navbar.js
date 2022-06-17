@@ -4,7 +4,7 @@ import Button from "./Button";
 
 const Navbar = ({ isAdmin}) => {
     if(isAdmin){
-        console.log('admin');
+        // console.log('admin');
     }
     return (
         <div className="navbar">

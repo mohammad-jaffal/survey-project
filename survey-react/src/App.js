@@ -1,6 +1,7 @@
 import './App.css';
 import Navbar from "./components/Navbar";
 import PageTitle from "./components/PageTitle";
+import SurveysContainer from "./components/SurveysContainer";
 
 
 function App() {
@@ -14,6 +15,7 @@ function App() {
         isAdmin={isAdmin}
         text={"All Surveys"}
       />
+      <SurveysContainer isAdmin={isAdmin}/>
     </div>
 
   );
