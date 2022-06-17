@@ -17,12 +17,12 @@ class QuestionController extends Controller{
            
         return response()->json([
             "success" => true,
+            "question" => $question,
         ], 200);
     }
 
     public function getQuestionsBySurveyId(Request $request){
         $id = $request->survey_id;
-        // $questions = Survey::find($id);
         $questions = Question::where('survey_id', $id)->get();
        
         return response()->json([
