@@ -2,6 +2,7 @@ import React from "react";
 
 
 const SurveyItem = ({isAdmin, text, onClick}) => {
+    
     return (
         <div
             className='survey-item'
