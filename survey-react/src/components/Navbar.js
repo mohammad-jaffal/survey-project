@@ -2,8 +2,10 @@ import React from "react";
 import Button from "./Button";
 
 
-const Header = ({ isAdmin}) => {
-    
+const Navbar = ({ isAdmin}) => {
+    if(isAdmin){
+        console.log('admin');
+    }
     return (
         <div className="navbar">
             <div className="main-logo">Survey</div>
@@ -19,4 +21,4 @@ const Header = ({ isAdmin}) => {
     );
 };
 
-export default Header;
+export default Navbar;
