@@ -1,24 +1,53 @@
 import './App.css';
+import { React, useState, useEffect } from "react";
 
 import Navbar from "./components/Navbar";
 import PageTitle from "./components/PageTitle";
 import SurveysContainer from "./components/SurveysContainer";
-import Home from "./components/SurveyQuestions";
-
-
-
-
+import SurveyQuestions from "./components/SurveyQuestions";
 import { Routes, Route, Link, BrowserRouter } from 'react-router-dom';
+import axios from 'axios';
 
 
 
 
 
-function App() {
+async function App() {
+
+  const [tasks, setTasks] = useState([]);
+  const [showAddTask, setShowAddTask] = useState(false);
+
+  // Initialize all tasks into state from backend at component load
+  useEffect(() => {
+    const getTasks = async () => {
+      const tasksFromServer = await fetchTasks();
+      console.log(tasksFromServer);
+      setTasks(tasksFromServer);
+    };
+    getTasks();
+  }, []);
+
+  //Fetch All Tasks from Backend
+  const fetchTasks = async () => {
+    try {
+      const res = await fetch("http://localhost:5000/tasks");
+      const data = await res.json();
+      return data;
+    } catch (err) {
+      console.log(err);
+    }
+  };
+
+
+
+
+
+  
+
   function addSurvey(){
     console.log('creating survey');
   }
-  var isAdmin = true;
+  var isAdmin = false;
   return (
     <BrowserRouter>
 
@@ -43,7 +72,7 @@ function App() {
               </>
             }
           ></Route>
-          <Route path="/home" element={<Home isAdmin={isAdmin} />} />
+          <Route path="/surveyquestions" element={<SurveyQuestions isAdmin={isAdmin} />} />
         </Routes>
         
       </div>

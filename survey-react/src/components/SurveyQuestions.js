@@ -17,7 +17,7 @@ function SurveyQuestions({ isAdmin }) {
 
             <PageTitle
                 isAdmin={isAdmin}
-                text={"Questions "+survey_id}
+                text={"Survey "+survey_id}
                 btn_text={"Add"}
                 onClick={addQuestion}
             />

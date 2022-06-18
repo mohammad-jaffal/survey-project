@@ -23,7 +23,7 @@ const SurveysContainer = ({ isAdmin }) => {
         <div className="surveys-container">
             {elements.map((value, index) => {
                 return (
-                <Link key={index} to={"./home"} style={{ textDecoration: 'none', color: 'black' }}>
+                <Link key={index} to={"./surveyquestions"} style={{ textDecoration: 'none', color: 'black' }}>
                     <SurveyItem text={`The title of ${value} is written here`} isAdmin={isAdmin} onClick={() => { clicked(value) }} />
                 </Link>)
 

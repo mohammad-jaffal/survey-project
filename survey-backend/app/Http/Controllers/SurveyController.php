@@ -6,8 +6,8 @@ use App\Models\Survey;
 
 use Illuminate\Http\Request;
 
-class SurveyController extends Controller
-{
+class SurveyController extends Controller{
+
     public function getSurveys(){
         $surveys = Survey::all();
         return response()->json([
