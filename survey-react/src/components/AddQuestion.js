@@ -8,7 +8,7 @@ function AddQuestion() {
     var sId = localStorage.getItem("survey_id");
 
     var type_select = document.getElementById("question_type");
-      function typeSelected () {
+    function typeSelected() {
         // console.log(type_select.value)
     }
 
@@ -31,12 +31,12 @@ function AddQuestion() {
                         const mydata = res.data;
                         if (mydata['success']) {
                             // navigate to add options if question is mcq or check box
-                            if(type_select.value==1 || type_select.value==3){
+                            if (type_select.value == 1 || type_select.value == 3) {
                                 localStorage.setItem('question_id', mydata['question']['id']);
                                 document.location.href = '/addoptions';
                             }
                             // navigate back to survey questions if question is text
-                            if(type_select.value==2){
+                            if (type_select.value == 2) {
                                 document.location.href = '/surveyquestions';
                             }
 
@@ -59,7 +59,7 @@ function AddQuestion() {
             </div>
             <div className="form-group">
                 <label>Question Type:</label>
-                <select id="question_type" className="form-control" onChange={()=>{typeSelected()}}>
+                <select id="question_type" className="form-control" onChange={() => { typeSelected() }}>
                     <option value="1">MCQ</option>
                     <option value="2">Text</option>
                     <option value="3">CheckBox</option>

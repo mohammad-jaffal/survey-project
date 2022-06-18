@@ -17,44 +17,47 @@ import Login from './components/Login';
 
 
 function App() {
-  
+
 
   const [surveys, setSurveys] = useState('');
   const [isAdmin, setAdmin] = useState('');
 
+
+  // get token from local storage
   var token = localStorage.getItem("token");
-  
-  
-  
+
+
+
   // check if admin logged in via jwt controller
   const checkAdmin = async () => {
-    
-  fetch("http://127.0.0.1:8000/api/profile", {
+    // check if token is still legit
+    fetch("http://127.0.0.1:8000/api/profile", {
 
-   method: 'POST',
-   headers:{
-              Authorization: 'Bearer '+ token,
-              Accept: 'application/json',
+      method: 'POST',
+      headers: {
+        Authorization: 'Bearer ' + token,
+        Accept: 'application/json',
       },
-      
-    }).then(res =>{
+
+    }).then(res => {
+      // set admin according to token
       setAdmin(false)
-      
-      if(res['status']=="200"){
+
+      if (res['status'] == "200") {
         setAdmin(true)
       }
     })
-    .catch(err=>{
-      console.log(err)
-    })
-   
+      .catch(err => {
+        console.log(err)
+      })
+
   }
 
 
-  
+
   // var isAdmin = true;
 
-// getting all surveys
+  // getting all surveys
   const fetchSurveys = async () => {
 
     try {
@@ -76,7 +79,7 @@ function App() {
   useEffect(() => {
     checkAdmin();
     fetchSurveys();
- 
+
   }, []);
 
 
@@ -84,7 +87,7 @@ function App() {
   function addSurvey() {
 
     document.location.href = '/addsurvey'
-    
+
   }
 
 

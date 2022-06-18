@@ -8,43 +8,26 @@ import { Routes, Route, Link, BrowserRouter } from 'react-router-dom';
 
 
 const SurveysContainer = ({ isAdmin, surveys }) => {
-    if (surveys == null) {
-        // console.log("gottem")
-    }
-    // console.log(surveys)
 
-    function clicked(x) {
-        // 👇️ navigate to /
-        // console.log(x);
-        localStorage.setItem("survey_id", x);
-
+    // save the survey id in local storage 
+    function clicked(sId) {
+        localStorage.setItem("survey_id", sId);
     };
-    
+
     try {
+        // create a card for each survey and redirect the user to corresponding questions page
         return (
-
             <div className="surveys-container">
-                {/* {
-            isAdmin ? <Button
-            text={btn_text}
-            onClick={onclick}
-      /> :""} */}
-
                 {surveys.map((value, index) => {
                     return (
                         <Link key={index} to={"./surveyquestions"} style={{ textDecoration: 'none', color: 'black' }}>
                             <SurveyItem text={value['title']} isAdmin={isAdmin} onClick={() => { clicked(value['id']) }} />
                         </Link>)
-
-                })
-
-                }
-
+                })}
             </div>
-
         );
 
-    } 
+    }
     catch (err) {
         // console.log(err)
         return (<div className="surveys-container">Loading...</div>);

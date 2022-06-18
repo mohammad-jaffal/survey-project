@@ -7,20 +7,17 @@ import QuestionsContainer from "./QuestionsContainer";
 
 
 
-
-
 function SurveyQuestions({ isAdmin }) {
 
     var sId = localStorage.getItem("survey_id");
 
     const [survey, setSurvey] = useState('');
 
-
     const fetchSurvey = async () => {
 
         try {
-
-            await axios.post(`http://127.0.0.1:8000/api/getsurvey`,{
+            // get the survey to show title
+            await axios.post(`http://127.0.0.1:8000/api/getsurvey`, {
                 survey_id: sId,
             })
                 .then(res => {
@@ -35,17 +32,11 @@ function SurveyQuestions({ isAdmin }) {
 
     }
 
-
-
     useEffect(() => {
 
         fetchSurvey();
 
     }, []);
-
-
-
-
 
     // console.log("loading "+sId)
 
@@ -54,10 +45,8 @@ function SurveyQuestions({ isAdmin }) {
     }
 
 
-
     return (
         <div className="body-container">
-
             <PageTitle
                 isAdmin={isAdmin}
                 text={survey}

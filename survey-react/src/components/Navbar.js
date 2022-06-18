@@ -5,7 +5,7 @@ import Button from "./Button";
 const Navbar = ({ isAdmin }) => {
 
 
-  var token = localStorage.getItem("token");
+    var token = localStorage.getItem("token");
 
 
     return (
@@ -15,9 +15,10 @@ const Navbar = ({ isAdmin }) => {
             <span
                 className="navbar-li"
                 onClick={() => {
+                    // if the admin already logged in
                     if (isAdmin) {
-                        console.log('logout');
-
+                        // console.log('logout');
+                        // logout api to destroy token
                         fetch("http://127.0.0.1:8000/api/logout", {
 
                             method: 'POST',
@@ -27,11 +28,8 @@ const Navbar = ({ isAdmin }) => {
                             },
 
                         }).then(res => {
-                            isAdmin=false;
-
-                            if (res['status'] == "200") {
-                                isAdmin=true;
-                            }
+                            // set admin as false 
+                            isAdmin = false;
                             document.location.reload()
                         })
                             .catch(err => {
@@ -39,22 +37,11 @@ const Navbar = ({ isAdmin }) => {
                             })
 
 
-
-
-
-
-
-
-
-
-
-
-
                     } else {
                         document.location.href = '/login'
                     }
                 }}>
-
+                {/* show login or logout depending if admin is logged in  */}
                 {isAdmin ? 'Logout' : 'Login'}
 
             </span>

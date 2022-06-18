@@ -15,29 +15,29 @@ const Login = () => {
             alert('Fill All')
         } else {
 
-                await axios.post(`http://127.0.0.1:8000/api/login`, {
-                    email: email,
-                    password: password,
-                }).then(res => {
-                        if (res['status'] == 200) {
-                            // save access token in local storage for later use
-                            localStorage.setItem('token', res.data['access_token'])
-                            document.location.href = '/';
-                        }
-                    })
-                    .catch(err => {
-                        alert("Wrong Credentials!");
-                    })
+            await axios.post(`http://127.0.0.1:8000/api/login`, {
+                email: email,
+                password: password,
+            }).then(res => {
+                // if login
+                if (res['status'] == 200) {
+                    // save access token in local storage for later use
+                    localStorage.setItem('token', res.data['access_token'])
+                    document.location.href = '/';
+                }
+            })
+                .catch(err => {
+                    alert("Wrong Credentials!");
+                })
 
         }
 
     }
 
 
-
-
     return (
         <div id="login_form" className="login-form-container">
+            {/* go back to previous page if he cancels login */}
             <Link to={-1}>back</Link>
             <div className="form-group">
                 <label>Email:</label>

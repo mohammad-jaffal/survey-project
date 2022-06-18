@@ -4,29 +4,29 @@ import axios from 'axios';
 
 
 function AddOptions() {
-    
+
     var qId = localStorage.getItem("question_id");
-    
+
     // create option for the question that just have been created
-    async function submitOption(){
+    async function submitOption() {
         var text = document.getElementById("option_text").value;
-        if(text == ""){
+        if (text == "") {
             alert('Enter option !');
-        }else{
+        } else {
             try {
-                await axios.post(`http://127.0.0.1:8000/api/admin/addoption`,{ 
+                await axios.post(`http://127.0.0.1:8000/api/admin/addoption`, {
                     option: text,
                     question_id: qId,
-             })
-                  .then(res => {
-                    const mydata = res.data;
-                    if(mydata['success']){
-                        document.getElementById("option_text").value = "";
-                    }
-                  })
-              } catch (err) {
+                })
+                    .then(res => {
+                        const mydata = res.data;
+                        if (mydata['success']) {
+                            document.getElementById("option_text").value = "";
+                        }
+                    })
+            } catch (err) {
                 // console.log(err)
-              }
+            }
         }
     }
 
@@ -36,11 +36,11 @@ function AddOptions() {
             <input type={"text"} id={"option_text"} className="form-control"></input>
             <Button
                 text={'submit'}
-                onClick={()=>{submitOption()}}
+                onClick={() => { submitOption() }}
             />
             <Button
                 text={'Done'}
-                onClick={()=>{
+                onClick={() => {
                     document.location.href = '/surveyquestions';
                 }}
             />
