@@ -7,9 +7,10 @@ import { Routes, Route, Link, BrowserRouter } from 'react-router-dom';
 
 
 
-const SurveysContainer = ({ isAdmin }) => {
+const SurveysContainer = ({ isAdmin, surveys }) => {
 
     const elements = [1, 2, 3, 4, 5, 6];
+    console.log(surveys[0])
 
     function clicked(x) {
         // 👇️ navigate to /
@@ -21,10 +22,10 @@ const SurveysContainer = ({ isAdmin }) => {
     return (
 
         <div className="surveys-container">
-            {elements.map((value, index) => {
+            {surveys.map((value, index) => {
                 return (
                 <Link key={index} to={"./surveyquestions"} style={{ textDecoration: 'none', color: 'black' }}>
-                    <SurveyItem text={`The title of ${value} is written here`} isAdmin={isAdmin} onClick={() => { clicked(value) }} />
+                    <SurveyItem text={value['title']} isAdmin={isAdmin} onClick={() => { clicked(value['id']) }} />
                 </Link>)
 
             })}

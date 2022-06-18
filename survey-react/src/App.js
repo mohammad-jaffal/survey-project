@@ -12,41 +12,49 @@ import axios from 'axios';
 
 
 
-async function App() {
+function App() {
 
-  const [tasks, setTasks] = useState([]);
-  const [showAddTask, setShowAddTask] = useState(false);
+  const [surveys, setSurveys] = useState('');
 
-  // Initialize all tasks into state from backend at component load
+
+  const fetchSurveys = async () => {
+
+    try {
+
+      await axios.get(`http://127.0.0.1:8000/api/getsurveys`)
+        .then(res => {
+          const mydata = res.data;
+          // console.log(mydata['surveys'])
+          setSurveys(mydata['surveys']);
+        })
+
+    } catch (err) {
+      console.log(err)
+    }
+
+  }
+
+
   useEffect(() => {
-    const getTasks = async () => {
-      const tasksFromServer = await fetchTasks();
-      console.log(tasksFromServer);
-      setTasks(tasksFromServer);
-    };
-    getTasks();
+    
+    fetchSurveys();
+ 
+    // if (surveys == null) {
+    //   console.log('still')
+    // } else {
+    //   console.log('surveys');
+
+    //   console.log(surveys);
+    // }
   }, []);
 
-  //Fetch All Tasks from Backend
-  const fetchTasks = async () => {
-    try {
-      const res = await fetch("http://localhost:5000/tasks");
-      const data = await res.json();
-      return data;
-    } catch (err) {
-      console.log(err);
-    }
-  };
 
 
-
-
-
-  
-
-  function addSurvey(){
+  function addSurvey() {
     console.log('creating survey');
   }
+
+
   var isAdmin = false;
   return (
     <BrowserRouter>
@@ -68,13 +76,13 @@ async function App() {
                   onClick={addSurvey}
 
                 />
-                <SurveysContainer isAdmin={isAdmin} />
+                <SurveysContainer isAdmin={isAdmin} surveys={surveys} />
               </>
             }
           ></Route>
           <Route path="/surveyquestions" element={<SurveyQuestions isAdmin={isAdmin} />} />
         </Routes>
-        
+
       </div>
     </BrowserRouter>
 

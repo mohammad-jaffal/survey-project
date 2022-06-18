@@ -6,11 +6,11 @@ import QuestionItem from "./QuestionItem";
 
 
 
-const QuestionsContainer = ({ isAdmin }) => {
+const QuestionsContainer = ({ isAdmin, questions}) => {
 
     const elements = [1, 2, 3, 4, 5, 6, 7, 8, 9];
 
-   
+   console.log("ahh"+questions)
 
     return (
 
