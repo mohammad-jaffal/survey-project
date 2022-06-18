@@ -3,7 +3,7 @@ import './App.css';
 import Navbar from "./components/Navbar";
 import PageTitle from "./components/PageTitle";
 import SurveysContainer from "./components/SurveysContainer";
-import Home from "./components/Home";
+import Home from "./components/SurveyQuestions";
 
 
 
@@ -15,7 +15,10 @@ import { Routes, Route, Link, BrowserRouter } from 'react-router-dom';
 
 
 function App() {
-  var isAdmin = false;
+  function addSurvey(){
+    console.log('creating survey');
+  }
+  var isAdmin = true;
   return (
     <BrowserRouter>
 
@@ -32,6 +35,9 @@ function App() {
                 <PageTitle
                   isAdmin={isAdmin}
                   text={"All Surveys"}
+                  btn_text={"Create"}
+                  onClick={addSurvey}
+
                 />
                 <SurveysContainer isAdmin={isAdmin} />
               </>

@@ -1,7 +1,7 @@
 import React from "react";
 import Button from "./Button";
 
-const PageTitle = ({isAdmin, text, onClick }) => {
+const PageTitle = ({isAdmin, text, btn_text, onClick }) => {
   return (
     <div
       className="page-title-container"
@@ -12,7 +12,8 @@ const PageTitle = ({isAdmin, text, onClick }) => {
       </p>
       {
       isAdmin ? <Button
-      text="Create"
+      text={btn_text}
+      onClick={onclick}
       /> :""}
     </div>
   );
