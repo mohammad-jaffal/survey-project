@@ -34,18 +34,12 @@ function App() {
 
   }
 
+  
 
   useEffect(() => {
     
     fetchSurveys();
  
-    // if (surveys == null) {
-    //   console.log('still')
-    // } else {
-    //   console.log('surveys');
-
-    //   console.log(surveys);
-    // }
   }, []);
 
 

@@ -8,9 +8,10 @@ import { Routes, Route, Link, BrowserRouter } from 'react-router-dom';
 
 
 const SurveysContainer = ({ isAdmin, surveys }) => {
-
-    const elements = [1, 2, 3, 4, 5, 6];
-    console.log(surveys[0])
+    if (surveys == null) {
+        console.log("gottem")
+    }
+    console.log(surveys)
 
     function clicked(x) {
         // 👇️ navigate to /
@@ -18,21 +19,37 @@ const SurveysContainer = ({ isAdmin, surveys }) => {
         localStorage.setItem("survey_id", x);
 
     };
+    
+    try {
+        return (
 
-    return (
+            <div className="surveys-container">
+                {/* {
+            isAdmin ? <Button
+            text={btn_text}
+            onClick={onclick}
+      /> :""} */}
 
-        <div className="surveys-container">
-            {surveys.map((value, index) => {
-                return (
-                <Link key={index} to={"./surveyquestions"} style={{ textDecoration: 'none', color: 'black' }}>
-                    <SurveyItem text={value['title']} isAdmin={isAdmin} onClick={() => { clicked(value['id']) }} />
-                </Link>)
+                {surveys.map((value, index) => {
+                    return (
+                        <Link key={index} to={"./surveyquestions"} style={{ textDecoration: 'none', color: 'black' }}>
+                            <SurveyItem text={value['title']} isAdmin={isAdmin} onClick={() => { clicked(value['id']) }} />
+                        </Link>)
 
-            })}
+                })
 
-        </div>
+                }
 
-    );
+            </div>
+
+        );
+
+    } catch (err) {
+        console.log(err)
+        return (<div className="surveys-container">NOTHING HERE TO SHOW!</div>);
+    }
+
+
 };
 
 export default SurveysContainer;

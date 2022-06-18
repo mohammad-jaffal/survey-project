@@ -1,28 +1,72 @@
-import React, { Component } from "react";
+
 import QuestionItem from "./QuestionItem";
 
+import axios from 'axios';
+import { React, useState, useEffect } from "react";
 // import { Link } from 'react-router-dom';
 
 
 
 
-const QuestionsContainer = ({ isAdmin, questions}) => {
+const QuestionsContainer = ({ isAdmin}) => {
 
     const elements = [1, 2, 3, 4, 5, 6, 7, 8, 9];
+ 
+    var sId = localStorage.getItem("survey_id");
 
-   console.log("ahh"+questions)
 
+    console.log(sId)
+
+
+    const [questions, setQuestions] = useState('');
+    
+  const fetchQuestions = async () => {
+
+    try {
+
+      await axios.post(`http://127.0.0.1:8000/api/getquestions`,{ survey_id: sId })
+        .then(res => {
+          const mydata = res.data;
+          console.log(mydata)
+          setQuestions(mydata['questions']);
+        })
+
+    } catch (err) {
+      console.log(err)
+    }
+
+  }
+
+
+
+  useEffect(() => {
+    
+    fetchQuestions();
+ 
+  }, []);
+
+
+  try {
     return (
 
         <div className="questions-container">
 
-            {elements.map((value, index) => {
+            {questions.map((value, index) => {
                 return (
-                    <QuestionItem key={index} text={value+" question is written here"}/>
+                    <QuestionItem key={index} text={value['question']}/>
                 )
             })}
         </div>
     );
+
+} catch (err) {
+    console.log(err)
+    return (<div className="surveys-container">NOTHING HERE TO SHOW!</div>);
+}
+
+
+
+   
 };
 
 export default QuestionsContainer;
