@@ -13,6 +13,8 @@ import axios from 'axios';
 
 
 function App() {
+  
+  var isAdmin = true;
 
   const [surveys, setSurveys] = useState('');
 
@@ -34,7 +36,7 @@ function App() {
 
   }
 
-  
+
 
   useEffect(() => {
     
@@ -49,7 +51,6 @@ function App() {
   }
 
 
-  var isAdmin = false;
   return (
     <BrowserRouter>
 

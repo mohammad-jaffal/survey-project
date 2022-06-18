@@ -161,47 +161,56 @@
   margin-top: 25px;
 }
 
-.mcq-item {
-  margin-bottom: 20px;
-  
+.radio-group {
+  /* background-color: blue; */
+  width: 100%;
+  display: flex;
+  flex-direction: column;
 }
 
-.mcq-item>span {
-  font-weight: 400;
-  font-size: 20px;
-}
-
-
-.mcq-circle {
-  display: inline-block;
-  height: 20px;
-  width: 20px;
-  border-radius: 50%;
-  background-color: white;
+.radio-option {
+  margin-left: 30px;
+  margin-top: 20px;
   margin-right: 20px;
   cursor: pointer;
-}
-.mcq-circle:hover{
-  background-color: rgba(0, 0, 0, 0.1);
+  border: 0px;
+  width: 20px;
+  height: 2em;
 }
 
-.text-input{
+
+
+.text-input {
   height: 35px;
   width: 80%;
   margin-left: 30px;
   margin-top: 25px;
   font-size: 18px;
+  padding-left: 10px;
 }
 
-.check-box {
-  display: inline-block;
-  height: 20px;
-  width: 20px;
-  border-radius: 20%;
-  background-color: white;
+
+
+.checkbox-group {
+  /* background-color: blue; */
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.checkbox-option {
+  margin-left: 30px;
+  margin-top: 20px;
   margin-right: 20px;
   cursor: pointer;
+  border: 0px;
+  width: 20px;
+  height: 2em;
 }
-.check-box:hover{
-  background-color: rgba(0, 0, 0, 0.1);
+
+.checkbox-group {
+  /* background-color: blue; */
+  width: 100%;
+  display: flex;
+  flex-direction: column;
 }

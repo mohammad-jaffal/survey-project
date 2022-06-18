@@ -44,7 +44,8 @@ const SurveysContainer = ({ isAdmin, surveys }) => {
 
         );
 
-    } catch (err) {
+    } 
+    catch (err) {
         console.log(err)
         return (<div className="surveys-container">NOTHING HERE TO SHOW!</div>);
     }
