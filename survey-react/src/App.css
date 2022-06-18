@@ -214,3 +214,36 @@
   display: flex;
   flex-direction: column;
 }
+
+
+
+.add-survey{
+  width: 50%;
+  align-self: center;
+}
+
+
+.form-group {
+  display: flex;
+  justify-content: space-between;
+  vertical-align: middle;
+
+  /* align-items: center; */
+}
+
+.form-control {
+  width: 70%;
+  height: 40px;
+  border-radius: 10px;
+  margin-bottom: 10px;
+  font-size: 20px;
+}
+
+.form-group>label {
+  font-size: 20px;
+  font-weight: bold;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 10%;
+}

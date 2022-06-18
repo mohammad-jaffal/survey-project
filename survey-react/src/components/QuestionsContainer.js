@@ -56,6 +56,7 @@ const QuestionsContainer = ({ isAdmin}) => {
                     <QuestionItem key={index} text={value['question']} question_id={value['id']} type_id={value['type_id']}/>
                 )
             })}
+            
         </div>
     );
 

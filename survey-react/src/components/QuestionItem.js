@@ -50,8 +50,6 @@ const QuestionItem = ({ isAdmin, text, question_id, type_id }) => {
         return (<div className="surveys-container">NOTHING HERE TO SHOW!</div>);
     }
     }
-
-
     if (type_id == 2) {
         x = "text";
         return (

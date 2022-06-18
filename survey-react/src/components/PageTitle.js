@@ -5,7 +5,8 @@ const PageTitle = ({isAdmin, text, btn_text, onClick }) => {
   return (
     <div
       className="page-title-container"
-      onClick={onClick}
+      // onClick={onClick}
+      {...isAdmin? onClick={onClick}:null}
     >
       <p className="page-title">
         {text}

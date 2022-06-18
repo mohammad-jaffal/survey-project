@@ -7,6 +7,8 @@ import SurveysContainer from "./components/SurveysContainer";
 import SurveyQuestions from "./components/SurveyQuestions";
 import { Routes, Route, Link, BrowserRouter } from 'react-router-dom';
 import axios from 'axios';
+import AddSurvey from './components/AddSurvey';
+import AddQuestion from './components/AddQuestion';
 
 
 
@@ -47,7 +49,9 @@ function App() {
 
 
   function addSurvey() {
-    console.log('creating survey');
+
+    document.location.href = '/addsurvey'
+    
   }
 
 
@@ -76,6 +80,8 @@ function App() {
             }
           ></Route>
           <Route path="/surveyquestions" element={<SurveyQuestions isAdmin={isAdmin} />} />
+          <Route path="/addsurvey" element={<AddSurvey />} />
+          <Route path="/addquestion" element={<AddQuestion />} />
         </Routes>
 
       </div>

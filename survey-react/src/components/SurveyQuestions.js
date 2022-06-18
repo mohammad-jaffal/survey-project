@@ -15,12 +15,11 @@ function SurveyQuestions({ isAdmin }) {
 
 
 
-
-
     // console.log("loading "+sId)
 
     function addQuestion() {
         console.log("Adding quest for " + sId)
+        document.location.href = '/addquestion';
     }
 
 
