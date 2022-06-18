@@ -9,6 +9,7 @@ import { Routes, Route, Link, BrowserRouter } from 'react-router-dom';
 import axios from 'axios';
 import AddSurvey from './components/AddSurvey';
 import AddQuestion from './components/AddQuestion';
+import AddOptions from './components/AddOptions';
 
 
 
@@ -82,6 +83,7 @@ function App() {
           <Route path="/surveyquestions" element={<SurveyQuestions isAdmin={isAdmin} />} />
           <Route path="/addsurvey" element={<AddSurvey />} />
           <Route path="/addquestion" element={<AddQuestion />} />
+          <Route path="/addoptions" element={<AddOptions />} />
         </Routes>
 
       </div>
