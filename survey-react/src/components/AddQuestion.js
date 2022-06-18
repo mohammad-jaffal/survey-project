@@ -9,11 +9,11 @@ function AddQuestion() {
 
     var type_select = document.getElementById("question_type");
       function typeSelected () {
-        console.log(type_select.value)
+        // console.log(type_select.value)
     }
 
 
-
+    // create a question
     async function submitQuestion() {
         var q = document.getElementById("question_title").value;
         if (q == "") {
@@ -30,19 +30,22 @@ function AddQuestion() {
                     .then(res => {
                         const mydata = res.data;
                         if (mydata['success']) {
-                            localStorage.setItem('question_id', mydata['question']['id']);
-                            document.location.href = '/addoptions';
+                            // navigate to add options if question is mcq or check box
+                            if(type_select.value==1 || type_select.value==3){
+                                localStorage.setItem('question_id', mydata['question']['id']);
+                                document.location.href = '/addoptions';
+                            }
+                            // navigate back to survey questions if question is text
+                            if(type_select.value==2){
+                                document.location.href = '/surveyquestions';
+                            }
 
                         }
                     })
 
             } catch (err) {
-                console.log(err)
+                // console.log(err)
             }
-
-
-
-
 
         }
     }
@@ -72,30 +75,6 @@ function AddQuestion() {
             />
         </div>
 
-
-        //     <div id="login_form" className="login-form-container">
-        //     <label>{count}</label>
-        //     <div className="form-group">
-        //         <label>Email:</label>
-        //         <input type="text" id="li_email" className="form-control" required />
-        //     </div>
-        //     <div className="form-group">
-        //         <label>Password:</label>
-        //         <input type="password" id="li_password" className="form-control" required />
-        //     </div>
-        //     <Button
-        //         color={'white'}
-        //         className={"li-btn"}
-        //         text={"Login"}
-        //         onclick={clicked}
-        //     />
-        //     <Button
-        //         color={'red'}
-        //         className={"li-btn"}
-        //         text={"pablo"}
-        //         onclick={pablo}
-        //     />
-        // </div>
     );
 }
 

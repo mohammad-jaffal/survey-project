@@ -17,11 +17,43 @@ import AddOptions from './components/AddOptions';
 
 function App() {
   
-  var isAdmin = true;
 
   const [surveys, setSurveys] = useState('');
+  const [isAdmin, setAdmin] = useState('');
+
+  var token = localStorage.getItem("token");
+  
+  
+  
+  // check if admin logged in via jwt controller
+  const checkAdmin = async () => {
+    
+  fetch("http://127.0.0.1:8000/api/profile", {
+
+   method: 'POST',
+   headers:{
+              Authorization: 'Bearer '+ token,
+              Accept: 'application/json',
+      },
+      
+    }).then(res =>{
+      if(res['status']=="200"){
+        setAdmin(true)
+      }else{
+        setAdmin(false)
+      }
+    })
+    .catch(err=>{
+      console.log(err)
+    })
+   
+  }
 
 
+  
+  // var isAdmin = true;
+
+// getting all surveys
   const fetchSurveys = async () => {
 
     try {
@@ -34,15 +66,14 @@ function App() {
         })
 
     } catch (err) {
-      console.log(err)
+      // console.log(err)
     }
-
   }
 
 
 
   useEffect(() => {
-    
+    checkAdmin();
     fetchSurveys();
  
   }, []);

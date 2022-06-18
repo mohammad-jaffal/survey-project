@@ -13,12 +13,43 @@ function SurveyQuestions({ isAdmin }) {
 
     var sId = localStorage.getItem("survey_id");
 
+    const [survey, setSurvey] = useState('');
+
+
+    const fetchSurvey = async () => {
+
+        try {
+
+            await axios.post(`http://127.0.0.1:8000/api/getsurvey`,{
+                survey_id: sId,
+            })
+                .then(res => {
+                    const mydata = res.data;
+                    // console.log(mydata['surveys'])
+                    setSurvey(mydata['survey']['title']);
+                })
+
+        } catch (err) {
+            // console.log(err)
+        }
+
+    }
+
+
+
+    useEffect(() => {
+
+        fetchSurvey();
+
+    }, []);
+
+
+
 
 
     // console.log("loading "+sId)
 
     function addQuestion() {
-        console.log("Adding quest for " + sId)
         document.location.href = '/addquestion';
     }
 
@@ -29,11 +60,11 @@ function SurveyQuestions({ isAdmin }) {
 
             <PageTitle
                 isAdmin={isAdmin}
-                text={"Survey "+sId}
+                text={survey}
                 btn_text={"Add"}
                 onClick={addQuestion}
             />
-            <QuestionsContainer isAdmin={isAdmin}/>
+            <QuestionsContainer isAdmin={isAdmin} />
 
         </div>
     );

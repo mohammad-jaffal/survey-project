@@ -1,11 +1,7 @@
 import React from "react";
 import Button from "./Button";
 
-
 const Navbar = ({ isAdmin}) => {
-    if(isAdmin){
-        // console.log('admin');
-    }
     return (
         <div className="navbar">
             <div className="main-logo">Survey</div>
@@ -13,9 +9,18 @@ const Navbar = ({ isAdmin}) => {
             <span
             className="navbar-li"
             onClick={()=>{
-                console.log('login');
+                if(isAdmin){
+                    window.location.replace("/");
+                    console.log('logout');
+                    isAdmin=false;
+                }else{
+                    console.log('logout');
+                    isAdmin=true;
+
+                }
             }}>
-                Login
+                {isAdmin? 'Logout' : 'Login'}
+                
             </span>
         </div>
     );

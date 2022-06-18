@@ -10,12 +10,11 @@ import { React, useState, useEffect } from "react";
 
 const QuestionsContainer = ({ isAdmin}) => {
 
-    const elements = [1, 2, 3, 4, 5, 6, 7, 8, 9];
  
     var sId = localStorage.getItem("survey_id");
 
 
-    console.log(sId)
+    // console.log(sId)
 
 
     const [questions, setQuestions] = useState('');
@@ -27,12 +26,12 @@ const QuestionsContainer = ({ isAdmin}) => {
       await axios.post(`http://127.0.0.1:8000/api/getquestions`,{ survey_id: sId })
         .then(res => {
           const mydata = res.data;
-          console.log(mydata)
+        //   console.log(mydata)
           setQuestions(mydata['questions']);
         })
 
     } catch (err) {
-      console.log(err)
+    //   console.log(err)
     }
 
   }
@@ -61,8 +60,8 @@ const QuestionsContainer = ({ isAdmin}) => {
     );
 
 } catch (err) {
-    console.log(err)
-    return (<div className="surveys-container">NOTHING HERE TO SHOW!</div>);
+    // console.log(err)
+    return (<div className="surveys-container">Loading...</div>);
 }
 
 

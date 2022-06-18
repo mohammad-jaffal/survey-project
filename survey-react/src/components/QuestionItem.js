@@ -12,11 +12,11 @@ const QuestionItem = ({ isAdmin, text, question_id, type_id }) => {
             await axios.post(`http://127.0.0.1:8000/api/getoptions`, { question_id: question_id })
                 .then(res => {
                     const mydata = res.data;
-                    console.log(mydata)
+                    // console.log(mydata)
                     setOptions(mydata['options']);
                 })
         } catch (err) {
-            console.log(err)
+            // console.log(err)
         }
     }
     useEffect(() => {
@@ -46,8 +46,8 @@ const QuestionItem = ({ isAdmin, text, question_id, type_id }) => {
             </div>
         );
     } catch (err) {
-        console.log(err)
-        return (<div className="surveys-container">NOTHING HERE TO SHOW!</div>);
+        // console.log(err)
+        return (<div className="surveys-container">Loading...</div>);
     }
     }
     if (type_id == 2) {
@@ -80,8 +80,8 @@ const QuestionItem = ({ isAdmin, text, question_id, type_id }) => {
                 </div>
             );
         } catch (err) {
-            console.log(err)
-            return (<div className="surveys-container">NOTHING HERE TO SHOW!</div>);
+            // console.log(err)
+            return (<div className="surveys-container">Loading...</div>);
         }
     }
 

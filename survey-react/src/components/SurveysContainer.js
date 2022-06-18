@@ -9,9 +9,9 @@ import { Routes, Route, Link, BrowserRouter } from 'react-router-dom';
 
 const SurveysContainer = ({ isAdmin, surveys }) => {
     if (surveys == null) {
-        console.log("gottem")
+        // console.log("gottem")
     }
-    console.log(surveys)
+    // console.log(surveys)
 
     function clicked(x) {
         // 👇️ navigate to /
@@ -46,8 +46,8 @@ const SurveysContainer = ({ isAdmin, surveys }) => {
 
     } 
     catch (err) {
-        console.log(err)
-        return (<div className="surveys-container">NOTHING HERE TO SHOW!</div>);
+        // console.log(err)
+        return (<div className="surveys-container">Loading...</div>);
     }
 
 
