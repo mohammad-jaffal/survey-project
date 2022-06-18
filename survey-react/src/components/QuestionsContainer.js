@@ -53,7 +53,7 @@ const QuestionsContainer = ({ isAdmin}) => {
 
             {questions.map((value, index) => {
                 return (
-                    <QuestionItem key={index} text={value['question']}/>
+                    <QuestionItem key={index} text={value['question']} question_id={value['id']} type_id={value['type_id']}/>
                 )
             })}
         </div>
