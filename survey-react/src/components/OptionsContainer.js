@@ -3,10 +3,11 @@ import MCQItem from "./MCQItem";
 
 import axios from 'axios';
 import { React, useState, useEffect } from "react";
+import CheckBoxItem from "./CheckBoxItem";
 // import { Link } from 'react-router-dom';
 
 
-const OptionsContainer = ({ isAdmin, question_id }) => {
+const OptionsContainer = ({ isAdmin, question_id, type_id}) => {
 
     const elements = [1, 2, 3, 4, 5, 6, 7, 8, 9];
 
@@ -39,10 +40,16 @@ const OptionsContainer = ({ isAdmin, question_id }) => {
 
             <div className="options-container">
                 
-
+                
                 {options.map((value, index) => {
+                    
                     return (
+
+                        type_id==1?
                         <MCQItem key={index} text={value['option']} Option_id={value['id']} />
+                        :
+                        <CheckBoxItem key={index} text={value['option']} Option_id={value['id']} />
+
                     )
                 })}
             </div>

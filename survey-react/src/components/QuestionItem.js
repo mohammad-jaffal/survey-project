@@ -11,7 +11,7 @@ const QuestionItem = ({isAdmin, text, question_id , type_id}) => {
             <div
                 className='question-item'
             ><p>{text}</p>
-            <OptionsContainer question_id={question_id}/>
+            <OptionsContainer question_id={question_id} type_id={type_id}/>
             </div>
         );
     }
@@ -21,13 +21,21 @@ const QuestionItem = ({isAdmin, text, question_id , type_id}) => {
             <div
                 className='question-item'
             ><p>{text}</p>
-            <input type={"text"}></input>
+            <input type={"text"} className={'text-input'} ></input>
+            </div>
+        );
+    }
+    if(type_id==3){
+        x ="Check box";
+        return (
+            <div
+                className='question-item'
+            ><p>{text}</p>
+            <OptionsContainer question_id={question_id} type_id={type_id}/>
             </div>
         );
     }
      
-     
-
 
     
 };

@@ -2,7 +2,7 @@
   margin: 0;
   padding: 0;
 
-  
+
 }
 
 .body-container {
@@ -95,7 +95,7 @@
 
 }
 
-.survey-item > p {
+.survey-item>p {
   align-self: flex-start;
   width: 250px;
   font-weight: 400;
@@ -146,7 +146,7 @@
 }
 
 
-.question-item > p {
+.question-item>p {
   align-self: flex-start;
   font-weight: 400;
   font-size: 24px;
@@ -156,22 +156,52 @@
 
 
 
-.options-container{
+.options-container {
   margin-left: 30px;
   margin-top: 25px;
-  background-color: aqua;
 }
 
 .mcq-item {
   margin-bottom: 20px;
-  background-color: blueviolet;
-  display: block;
+  
 }
 
+.mcq-item>span {
+  font-weight: 400;
+  font-size: 20px;
+}
+
+
 .mcq-circle {
-display: inline-block;
-height: 20px;
-width: 20px;
-border-radius: 50%;
-background-color: white;
+  display: inline-block;
+  height: 20px;
+  width: 20px;
+  border-radius: 50%;
+  background-color: white;
+  margin-right: 20px;
+  cursor: pointer;
+}
+.mcq-circle:hover{
+  background-color: rgba(0, 0, 0, 0.1);
+}
+
+.text-input{
+  height: 35px;
+  width: 80%;
+  margin-left: 30px;
+  margin-top: 25px;
+  font-size: 18px;
+}
+
+.check-box {
+  display: inline-block;
+  height: 20px;
+  width: 20px;
+  border-radius: 20%;
+  background-color: white;
+  margin-right: 20px;
+  cursor: pointer;
+}
+.check-box:hover{
+  background-color: rgba(0, 0, 0, 0.1);
 }
