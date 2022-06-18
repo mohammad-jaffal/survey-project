@@ -29,8 +29,6 @@ const Login = () => {
                         alert("Wrong Credentials!");
                     })
 
-
-
         }
 
     }

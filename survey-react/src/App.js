@@ -38,10 +38,10 @@ function App() {
       },
       
     }).then(res =>{
+      setAdmin(false)
+      
       if(res['status']=="200"){
         setAdmin(true)
-      }else{
-        setAdmin(false)
       }
     })
     .catch(err=>{
