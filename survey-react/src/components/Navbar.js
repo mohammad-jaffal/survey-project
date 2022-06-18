@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import Button from "./Button";
 
 const Navbar = ({ isAdmin}) => {
@@ -10,15 +11,12 @@ const Navbar = ({ isAdmin}) => {
             className="navbar-li"
             onClick={()=>{
                 if(isAdmin){
-                    window.location.replace("/");
-                    console.log('logout');
-                    isAdmin=false;
+                    console.log('logout'); 
                 }else{
-                    console.log('logout');
-                    isAdmin=true;
-
+                    document.location.href = '/login'
                 }
             }}>
+                
                 {isAdmin? 'Logout' : 'Login'}
                 
             </span>

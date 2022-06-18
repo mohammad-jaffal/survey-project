@@ -10,6 +10,7 @@ import axios from 'axios';
 import AddSurvey from './components/AddSurvey';
 import AddQuestion from './components/AddQuestion';
 import AddOptions from './components/AddOptions';
+import Login from './components/Login';
 
 
 
@@ -115,6 +116,7 @@ function App() {
           <Route path="/addsurvey" element={<AddSurvey />} />
           <Route path="/addquestion" element={<AddQuestion />} />
           <Route path="/addoptions" element={<AddOptions />} />
+          <Route path="/login" element={<Login />} />
         </Routes>
 
       </div>
