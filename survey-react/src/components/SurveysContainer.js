@@ -12,6 +12,7 @@ const SurveysContainer = ({ isAdmin, surveys }) => {
     // save the survey id in local storage 
     function clicked(sId) {
         localStorage.setItem("survey_id", sId);
+        document.location.href = '/surveyquestions';
     };
 
     try {
@@ -20,9 +21,8 @@ const SurveysContainer = ({ isAdmin, surveys }) => {
             <div className="surveys-container">
                 {surveys.map((value, index) => {
                     return (
-                        <Link key={index} to={"./surveyquestions"} style={{ textDecoration: 'none', color: 'black' }}>
-                            <SurveyItem text={value['title']} isAdmin={isAdmin} onClick={() => { clicked(value['id']) }} />
-                        </Link>)
+                            <SurveyItem key={index} text={value['title']} isAdmin={isAdmin} onClick={() => { clicked(value['id']) }} id={value['id']} />
+                        )
                 })}
             </div>
         );

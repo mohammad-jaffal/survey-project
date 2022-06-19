@@ -35,9 +35,11 @@ Route::post('/addanswer', [AnswerController::class, 'addAnswer']);
 
 Route::group(['prefix'=>'admin'], function(){
     Route::post('/addsurvey', [SurveyController::class, 'addSurvey']);
+    Route::post('/deletesurvey', [SurveyController::class, 'deleteSurveyById']);
     Route::post('/addquestion', [QuestionController::class, 'addQuestion']);
     Route::post('/addtype', [TypeController::class, 'addType']);
     Route::post('/addoption', [OptionController::class, 'addOption']);
     Route::post('/getanswers', [AnswerController::class, 'getAnswersByQuestionId']);
 
+    
 });
