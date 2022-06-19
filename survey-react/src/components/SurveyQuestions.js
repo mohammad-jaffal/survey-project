@@ -1,6 +1,7 @@
 
 import axios from 'axios';
 import { React, useState, useEffect } from "react";
+import Button from './Button';
 
 import PageTitle from "./PageTitle";
 import QuestionsContainer from "./QuestionsContainer";
@@ -44,6 +45,11 @@ function SurveyQuestions({ isAdmin }) {
         document.location.href = '/addquestion';
     }
 
+    function submitsurvey() {
+        console.log("submitted");
+
+    }
+
 
     return (
         <div className="body-container">
@@ -53,8 +59,11 @@ function SurveyQuestions({ isAdmin }) {
                 btn_text={"Add"}
                 onClick={addQuestion}
             />
+            
             <QuestionsContainer isAdmin={isAdmin} />
-
+            <div className='btn-container'>
+                <button className='li-btn'  id="ansr_btn">Submit</button>
+                </div>
         </div>
     );
 };

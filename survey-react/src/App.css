@@ -279,3 +279,22 @@
   align-self: center;
 
 }
+
+
+.btn-container{
+  text-align: center;
+  margin-bottom: 200px;
+}
+
+.a-btn {
+  width: 100px;
+  height: 40px;
+  border-radius: 10px;
+  color: black;
+  font-size: 25px;
+  cursor: pointer;
+  margin-top: 15px;
+  margin-bottom: 10px;
+  align-self: center;
+
+}

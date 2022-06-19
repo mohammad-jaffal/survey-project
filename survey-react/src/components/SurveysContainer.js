@@ -26,14 +26,11 @@ const SurveysContainer = ({ isAdmin, surveys }) => {
                 })}
             </div>
         );
-
     }
     catch (err) {
         // console.log(err)
         return (<div className="surveys-container">Loading...</div>);
     }
-
-
 };
 
 export default SurveysContainer;

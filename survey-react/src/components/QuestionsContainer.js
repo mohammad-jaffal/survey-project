@@ -5,6 +5,7 @@ import axios from 'axios';
 import { React, useState, useEffect } from "react";
 // import { Link } from 'react-router-dom';
 
+import Button from "./Button";
 
 
 
@@ -48,7 +49,9 @@ const QuestionsContainer = ({ isAdmin }) => {
             <QuestionItem key={index} text={value['question']} question_id={value['id']} type_id={value['type_id']} />
           )
         })}
+
       </div>
+
     );
 
   } catch (err) {
