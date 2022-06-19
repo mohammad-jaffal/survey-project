@@ -298,3 +298,32 @@
   align-self: center;
 
 }
+
+
+.answers-container{
+  width: 80%;
+  align-self: center;
+  margin-top: 100px;
+}
+
+.ans-item-container{
+  background-color: rgba(0, 0, 0, 0.2);
+  border-radius: 10px;
+  margin-bottom: 50px;
+  font-weight: 400;
+  font-size: 24px;
+  user-select: none;
+  padding: 30px;
+}
+
+.answer-item{
+  margin-top: 20px;
+  margin-left: 10px;
+  font-weight: 400;
+  font-size: 24px;
+  user-select: none;
+}
+
+.answer-item>div{
+  margin-bottom: 10px;
+}

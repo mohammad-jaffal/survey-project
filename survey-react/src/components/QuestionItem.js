@@ -45,7 +45,7 @@ const QuestionItem = ({ isAdmin, text, question_id, type_id }) => {
             var mcqs = document.getElementsByName('q' + question_id);
             for (var x of mcqs) {
                 if (x.checked) {
-                    console.log(x.value)
+                    // console.log(x.value)
                     try {
                         await axios.post(`http://127.0.0.1:8000/api/addanswer`, {
                             question_id: question_id,
@@ -101,14 +101,11 @@ const QuestionItem = ({ isAdmin, text, question_id, type_id }) => {
     if (type_id == 2) {
         x = "text";
         document.getElementById('ansr_btn').addEventListener("click", async function () {
-            console.log(question_id)
+            // console.log(question_id)
             var text_ansr = document.getElementById('q' + question_id);
             
-                if (text_ansr.value == ""){
-                    console.log("empty")
-                }
-                else {
-                    console.log(text_ansr.value)
+                  
+                    // console.log(text_ansr.value)
                     try {
                         await axios.post(`http://127.0.0.1:8000/api/addanswer`, {
                             question_id: question_id,
@@ -119,7 +116,7 @@ const QuestionItem = ({ isAdmin, text, question_id, type_id }) => {
                     } catch (err) {
                         // console.log(err)
                     }
-                }
+                
             
         })
 
@@ -155,11 +152,11 @@ const QuestionItem = ({ isAdmin, text, question_id, type_id }) => {
         x = "Check box";
 
         document.getElementById('ansr_btn').addEventListener("click", async function () {
-            console.log(question_id)
+            // console.log(question_id)
             var chbs = document.getElementsByName('q' + question_id);
             for (var x of chbs) {
                 if (x.checked) {
-                    console.log(x.value)
+                    // console.log(x.value)
                     try {
                         await axios.post(`http://127.0.0.1:8000/api/addanswer`, {
                             question_id: question_id,
