@@ -35,13 +35,6 @@ const QuestionItem = ({ isAdmin, text, question_id, type_id }) => {
 
 
 
-
-
-
-
-
-
-
     //  if question type is mcq, show the options in radio button
     var x;
     if (type_id == 1) {
@@ -155,7 +148,7 @@ const QuestionItem = ({ isAdmin, text, question_id, type_id }) => {
 
 
 
-    
+
 
     //  if question type is checkbox, show the options in checkbox
     if (type_id == 3) {

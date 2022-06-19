@@ -267,11 +267,11 @@
 
 
 .li-btn {
-  width: 100px;
+  /* width: 100px; */
   height: 40px;
   border-radius: 10px;
   color: black;
-  font-weight: bold;
+  /* font-weight: bold; */
   font-size: 25px;
   cursor: pointer;
   margin-top: 15px;

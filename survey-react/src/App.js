@@ -11,6 +11,7 @@ import AddSurvey from './components/AddSurvey';
 import AddQuestion from './components/AddQuestion';
 import AddOptions from './components/AddOptions';
 import Login from './components/Login';
+import ViewAnswers from './components/ViewAnswers';
 
 
 
@@ -120,6 +121,7 @@ function App() {
           <Route path="/addquestion" element={<AddQuestion />} />
           <Route path="/addoptions" element={<AddOptions />} />
           <Route path="/login" element={<Login />} />
+          <Route path="/viewanswers" element={<ViewAnswers />} />
         </Routes>
 
       </div>
