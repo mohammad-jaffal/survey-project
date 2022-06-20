@@ -21,8 +21,8 @@ const SurveysContainer = ({ isAdmin, surveys }) => {
             <div className="surveys-container">
                 {surveys.map((value, index) => {
                     return (
-                            <SurveyItem key={index} text={value['title']} isAdmin={isAdmin} onClick={() => { clicked(value['id']) }} id={value['id']} />
-                        )
+                        <SurveyItem key={index} text={value['title']} isAdmin={isAdmin} onClick={() => { clicked(value['id']) }} id={value['id']} />
+                    )
                 })}
             </div>
         );

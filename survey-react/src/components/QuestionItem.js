@@ -103,21 +103,21 @@ const QuestionItem = ({ isAdmin, text, question_id, type_id }) => {
         document.getElementById('ansr_btn').addEventListener("click", async function () {
             // console.log(question_id)
             var text_ansr = document.getElementById('q' + question_id);
-            
-                  
-                    // console.log(text_ansr.value)
-                    try {
-                        await axios.post(`http://127.0.0.1:8000/api/addanswer`, {
-                            question_id: question_id,
-                            answer: text_ansr.value
-                        })
-                            .then(res => {
-                            })
-                    } catch (err) {
-                        // console.log(err)
-                    }
-                
-            
+
+
+            // console.log(text_ansr.value)
+            try {
+                await axios.post(`http://127.0.0.1:8000/api/addanswer`, {
+                    question_id: question_id,
+                    answer: text_ansr.value
+                })
+                    .then(res => {
+                    })
+            } catch (err) {
+                // console.log(err)
+            }
+
+
         })
 
 

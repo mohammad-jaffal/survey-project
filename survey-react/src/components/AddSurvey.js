@@ -32,13 +32,16 @@ function AddSurvey() {
 
 
     return (
-        <div className="add-survey">
-            <input type={"text"} id={"survey_name"} className={'form-control'}></input>
-            <Button
-                text={'submit'}
-                onClick={() => { submitSurvey() }}
-            />
-        </div>
+
+        <center className='login-background'>
+            <div className="add-survey">
+                <input type={"text"} id={"survey_name"} className={'form-control'}></input>
+                <Button
+                    text={'submit'}
+                    onClick={() => { submitSurvey() }}
+                />
+            </div>
+        </center>
     );
 }
 

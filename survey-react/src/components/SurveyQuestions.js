@@ -46,7 +46,7 @@ function SurveyQuestions({ isAdmin }) {
     }
 
     function viewAnswers() {
-        window.location.href= '/viewanswers'
+        window.location.href = '/viewanswers'
     }
 
     // document.getElementById("view_ans_btn").addEventListener("click", function(){})
@@ -59,11 +59,11 @@ function SurveyQuestions({ isAdmin }) {
                 btn_text={"Add"}
                 onClick={addQuestion}
             />
-            { isAdmin? <button className='li-btn'  onClick={()=>{viewAnswers()}}>Answers</button>: "" }
+            {isAdmin ? <button className='li-btn' onClick={() => { viewAnswers() }}>Answers</button> : ""}
             <QuestionsContainer isAdmin={isAdmin} />
             <div className='btn-container'>
-                <button className='li-btn'  id="ansr_btn">Submit</button>
-                </div>
+                <button className='li-btn' id="ansr_btn">Submit</button>
+            </div>
         </div>
     );
 };

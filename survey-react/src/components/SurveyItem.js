@@ -2,11 +2,11 @@ import React from "react";
 import axios from 'axios';
 
 
-const SurveyItem = ({isAdmin, text, onClick, id}) => {
+const SurveyItem = ({ isAdmin, text, onClick, id }) => {
 
 
-    async function deleteSurvey(){
-     
+    async function deleteSurvey() {
+
         try {
 
             await axios.post(`http://127.0.0.1:8000/api/admin/deletesurvey`, {
@@ -23,7 +23,7 @@ const SurveyItem = ({isAdmin, text, onClick, id}) => {
         } catch (err) {
             // console.log(err)
         }
-        
+
     }
 
 
@@ -33,11 +33,11 @@ const SurveyItem = ({isAdmin, text, onClick, id}) => {
 
         >
             <p onClick={onClick}>
-            {text}
+                {text}
             </p>
             {
-            isAdmin ? <img src={require('../assets/del.png')} className="del-icon" 
-            onClick={()=>{deleteSurvey();}}/> :<div style={{height: '40px'}} />}
+                isAdmin ? <img src={require('../assets/del.png')} className="del-icon"
+                    onClick={() => { deleteSurvey(); }} /> : <div style={{ height: '40px' }} />}
         </div>
     );
 };

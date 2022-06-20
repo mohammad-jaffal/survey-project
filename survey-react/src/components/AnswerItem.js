@@ -3,7 +3,7 @@ import axios from 'axios';
 
 
 
-const AnswerItem = ({question_id}) => {
+const AnswerItem = ({ question_id }) => {
 
     const [answers, setAnswers] = useState('');
 
@@ -35,23 +35,23 @@ const AnswerItem = ({question_id}) => {
 
 
     try {
-    return (
-        <div
-            className='answer-item'
-        >
-            {answers.map((value, index) => {
-                return (
-                    <div key={index}>
-                        {"- "+value['answer']}
-                    </div>
-                )
-            })}
-        </div>
-    );
-} catch (err) {
-    // show loading sign while the questions are being loaded
-    return (<div className="surveys-container">Loading...</div>);
-}
+        return (
+            <div
+                className='answer-item'
+            >
+                {answers.map((value, index) => {
+                    return (
+                        <div key={index}>
+                            {"- " + value['answer']}
+                        </div>
+                    )
+                })}
+            </div>
+        );
+    } catch (err) {
+        // show loading sign while the questions are being loaded
+        return (<div className="surveys-container">Loading...</div>);
+    }
 };
 
 export default AnswerItem;

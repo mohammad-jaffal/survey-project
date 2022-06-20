@@ -32,19 +32,22 @@ function AddOptions() {
 
 
     return (
-        <div className="add-Options">
-            <input type={"text"} id={"option_text"} className="form-control"></input>
-            <Button
-                text={'submit'}
-                onClick={() => { submitOption() }}
-            />
-            <Button
-                text={'Done'}
-                onClick={() => {
-                    document.location.href = '/surveyquestions';
-                }}
-            />
-        </div>
+        <center className='login-background'>
+
+            <div className="add-Options">
+                <input type={"text"} id={"option_text"} className="form-control"></input>
+                <Button
+                    text={'submit'}
+                    onClick={() => { submitOption() }}
+                />
+                <Button
+                    text={'Done'}
+                    onClick={() => {
+                        document.location.href = '/surveyquestions';
+                    }}
+                />
+            </div>
+        </center>
     );
 }
 

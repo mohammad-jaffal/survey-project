@@ -43,13 +43,13 @@ function ViewAnswers() {
 
     //  create question card for each question
     try {
-        return ( 
+        return (
             <div className="answers-container">
                 {questions.map((value, index) => {
                     return (
                         <div key={index} className={'ans-item-container'}>
                             {value['question']}
-                            <AnswerItem question_id={value['id']}/>
+                            <AnswerItem question_id={value['id']} />
                         </div>
                     )
                 })}

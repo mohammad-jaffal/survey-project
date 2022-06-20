@@ -52,29 +52,30 @@ function AddQuestion() {
 
 
     return (
-        <div className="add-survey">
-            <div className="form-group">
-                <label>Question:</label>
-                <input type={"text"} id={"question_title"} className="form-control" />
+        <center className='login-background'>
+            <div className="add-survey">
+                <div className="form-group">
+                    <label>Question:</label>
+                    <input type={"text"} id={"question_title"} className="form-control" />
+                </div>
+                <div className="form-group">
+                    <label>Question Type:</label>
+                    <select id="question_type" className="form-control" onChange={() => { typeSelected() }}>
+                        <option value="1">MCQ</option>
+                        <option value="2">Text</option>
+                        <option value="3">CheckBox</option>
+                    </select>
+                </div>
+
+
+
+
+                <Button
+                    text={'add'}
+                    onClick={() => { submitQuestion() }}
+                />
             </div>
-            <div className="form-group">
-                <label>Question Type:</label>
-                <select id="question_type" className="form-control" onChange={() => { typeSelected() }}>
-                    <option value="1">MCQ</option>
-                    <option value="2">Text</option>
-                    <option value="3">CheckBox</option>
-                </select>
-            </div>
-
-
-
-
-            <Button
-                text={'add'}
-                onClick={() => { submitQuestion() }}
-            />
-        </div>
-
+        </center>
     );
 }
 

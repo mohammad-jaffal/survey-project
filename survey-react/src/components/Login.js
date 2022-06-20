@@ -36,22 +36,24 @@ const Login = () => {
 
 
     return (
-        <div id="login_form" className="login-form-container">
-            {/* go back to previous page if he cancels login */}
-            <Link to={-1}>back</Link>
-            <div className="form-group">
-                <label>Email:</label>
-                <input type="text" id="li_email" className="form-control" required />
-            </div>
-            <div className="form-group">
-                <label>Password:</label>
-                <input type="password" id="li_password" className="form-control" required />
-            </div>
-            <div className="form-group">
-                <button className='li-btn' onClick={loginFunction}>Login</button>
-            </div>
+        <center className='login-background'>
+            <div id="login_form" className="login-form-container">
+                {/* go back to previous page if he cancels login */}
+                <Link to={-1}>back</Link>
+                <div className="form-group">
+                    <label>Email:</label>
+                    <input type="text" id="li_email" className="form-control" required />
+                </div>
+                <div className="form-group">
+                    <label>Password:</label>
+                    <input type="password" id="li_password" className="form-control" required />
+                </div>
+                <div className="form-group">
+                    <button className='li-btn' onClick={loginFunction}>Login</button>
+                </div>
 
-        </div>
+            </div>
+        </center>
     );
 };
 
